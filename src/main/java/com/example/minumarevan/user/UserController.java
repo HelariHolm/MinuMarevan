@@ -10,6 +10,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class UserController {
+
     @Autowired
     public UserService service;
 
@@ -30,6 +31,6 @@ public class UserController {
         if (username != null && password != null && !user.getUsername().equals(username) && !user.getPassword().equals(password)) {
             ra.addFlashAttribute("message", "Login information incorrect! Try again.");
         }
-        return "redirect:/chat";
+        return "redirect:/index";
     }
 }
