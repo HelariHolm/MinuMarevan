@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Tere tulemast MinuMarevani!</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="text-center">
+            <h1 class="p-4">Tere tulemast MinuMarevani!</h1>
+            <h2>Logi sisse</h2>
+        </div>
+        <form th:action="@{/login}" method="post" style="max-width: 500px; margin: 0 auto">
+            <div class="border border-secondary rounded p-3">
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Kasutajanimi:</label>
+                    <div class="col-sm-8">
+                        <input type="text" name="username" class="form-control" required/>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Salasõna:</label>
+                    <div class="col-sm-8">
+                        <input type="password" name="password" class="form-control" required/>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary btn-outline-dark m-2">Sisene</button>
+                </div>
+                <div class="text-center">
+                    <button type="button" onclick="register()" class="btn btn-secondary btn-outline-dark m-2">Registreeru kasutajaks</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script type="text/javascript">
+        function register() {
+            window.location = "[[@{/register}]]";
+        }
+    </script>
+</body>
+</html>
