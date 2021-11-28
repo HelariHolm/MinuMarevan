@@ -4,315 +4,299 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <th:block layout:insert="~{fragments/header}"/>
 <body>
-    <div class="mx-auto w-75 container bg-info">
-        <div class="text-center p-3">
-            <h2>Tere tulemast MinuMarevani</h2>
-        </div>
+    <div class="mx-auto w-75 container">
         <div>
-            <div class="text-end">
-                <button type="submit" class="btn btn-primary m-2">Logi välja</button>
-            </div>
             <div class="row p-1">
-                <div class="col card rounded-3 shadow p-3 m-2">
-                    <img src="https://www.healthnavigator.org.nz/media/9402/inr-log-app-icon.jpg" class="img-fluid rounded mx-auto" style="max-width: 300px">
-                    <p>Sisesta INR väärtus</p>
-                    <button type="button" class="btn btn-primary m-2" data-toggle="modal" data-target="#inrModal">
-                        Vaata ja sisesta väärtus
-                    </button>
-                    <div class="modal fade" id="inrModal" tabindex="-1" role="dialog" aria-labelledby="intModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="inrModalLabel">Sisesta INR väärtus</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="form-group row">
-                                        <label class="col-sm-4 col-form-label">INR väärtus:</label>
-                                        <div class="col-sm-8">
-                                            <input type="text" value="" name="" class="form-control" required/>
-                                        </div>
+                <div class="col">
+                    <div class="col card one-div rounded-3 p-3 m-3 clickable-card" data-toggle="modal" data-target="#inrModal">
+                        <h5 class="text-center">Vaata ja sisesta väärtus</h5>
+                        <div class="modal fade" id="inrModal" tabindex="-1" role="dialog" aria-labelledby="intModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="inrModalLabel">Sisesta INR väärtus</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
                                     </div>
-                                    <div class="form-group row">
-                                        <label class="col-sm-4 col-form-label">INR kuupäev:</label>
-                                        <div class="col-sm-8">
-                                            <input type="date" value="" name="" class="form-control" required/>
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <h6 class="modal-title mt-2 mb-3" id="inrPillNumber">Tablettide arv päevas</h6>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-sm-4 col-form-label">Esmaspäev:</label>
-                                        <div class="col-sm-8">
-                                            <input type="number" value="" name="" class="form-control" required/>
-                                        </div>
-                                        <label class="col-sm-4 col-form-label">Teisipäev:</label>
-                                        <div class="col-sm-8">
-                                            <input type="number" value="" name="" class="form-control" required/>
-                                        </div>
-                                        <label class="col-sm-4 col-form-label">Kolmapäev:</label>
-                                        <div class="col-sm-8">
-                                            <input type="number" value="" name="" class="form-control" required/>
-                                        </div>
-                                        <label class="col-sm-4 col-form-label">Neljapäev:</label>
-                                        <div class="col-sm-8">
-                                            <input type="number" value="" name="" class="form-control" required/>
-                                        </div>
-                                        <label class="col-sm-4 col-form-label">Reede:</label>
-                                        <div class="col-sm-8">
-                                            <input type="number" value="" name="" class="form-control" required/>
-                                        </div>
-                                        <label class="col-sm-4 col-form-label">Laupäev:</label>
-                                        <div class="col-sm-8">
-                                            <input type="number" value="" name="" class="form-control" required/>
-                                        </div>
-                                        <label class="col-sm-4 col-form-label">Pühapäev:</label>
-                                        <div class="col-sm-8">
-                                            <input type="number" value="" name="" class="form-control" required/>
-                                        </div>
-                                    </div>
-
-
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Sulge</button>
-                                    <button type="button" class="btn btn-primary">Salvesta muudatused</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col card rounded-3 shadow p-3 m-2">
-                    <img src="https://www.gannett-cdn.com/presto/2019/09/19/PNDN/bf00c02c-5f88-4ed7-826f-8375e539d446-GettyImages-932555698.jpg" class="img-fluid rounded mx-auto" style="max-width: 300px">
-                    <div class="card-body">
-                        <p>Tänane annus</p>
-                    </div>
-                </div>
-                <div class="col card rounded-3 shadow p-3 m-2">
-                    <img src="data:image/png;base64,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" class="img-fluid rounded mx-auto" style="max-width: 300px">
-                    <p>Olulised kontaktid</p>
-                    <button type="button" class="btn btn-primary m-2" data-toggle="modal" data-target="#contactsModal">
-                        Vaata ja muuda kontakte
-                    </button>
-                    <div class="modal fade" id="contactsModal" tabindex="-1" role="dialog" aria-labelledby="contactsModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="contactsModalLabel">Olulised kontaktid</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="form-group row">
-                                        <label class="col-sm-4 col-form-label">Tervishoiutöötaja:</label>
-                                        <div class="col-sm-8">
-                                            <input type="number" value="+372" name="" class="form-control"/>
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-sm-4 col-form-label">Lähedane:</label>
-                                        <div class="col-sm-8">
-                                            <input type="number" value="+372" name="" class="form-control"/>
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-sm-4 col-form-label">Hädaabi:</label>
-                                        <div class="col-sm-4 m-1">
-                                            <p>112</p>
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-sm-4 col-form-label">Mürgistusliin:</label>
-                                        <div class="col-sm-4 m-1">
-                                            <p>16662</p>
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-sm-4 col-form-label">24/7 perearstiliin:</label>
-                                        <div class="col-sm-4 m-1">
-                                            <p>1220</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Sulge</button>
-                                    <button type="submit" class="btn btn-primary">Salvesta muudatused</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row p-1">
-                <div class="col card rounded-3 shadow p-3 m-2">
-                    <p>Minu ajalugu</p>
-                </div>
-                <div class="col card rounded-3 shadow p-3 m-2">
-                    <img src="https://www.burgerstein.at/files/_processed_/e/9/csm_Q_Vitamine_Vitamin_K_Brett_69b8bb521b.jpg" class="img-fluid rounded mx-auto" style="max-width: 300px" alt="vitamin">
-                    <p>Vitamiin K info</p>
-                    <button type="button" class="btn btn-primary m-2" data-toggle="modal" data-target="#vitaminModal">
-                        Vaata lisainfot
-                    </button>
-                    <div class="modal fade" id="vitaminModal" tabindex="-1" role="dialog" aria-labelledby="vitaminModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="vitaminModalLabel">Vitamiin K info</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <p>
-                                        <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                                            Toiduained, milles on kõrge K-vitamiini sisaldus (madal INR viitab paksule verele)
-                                        </a>
-                                    </p>
-                                    <div class="collapse" id="collapseExample">
-                                        <div class="card card-body">
-                                            <li>köögiviljad (nt lehtpeet, spinat, lehtkapsas, maitseroheline, murulauk, rooskapsas)</li>
-                                            <li>mõned taimeõlid (nt rapsi-, soja- ja kõrvitsaseemneõli)</li>
-                                            <li>leidub ka maksas, lihas, munakollases ja piimatoodetes</li>
-                                        </div>
-                                    </div>
-                                    <p>
-                                        <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample2">
-                                            Toiduained, millel on madal K-vitamiini sisaldus
-                                        </a>
-                                    </p>
-                                    <div class="collapse" id="collapseExample2">
-                                        <div class="card card-body">
-                                            Content
-                                        </div>
-                                    </div>
-                                    <p>
-                                        <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample3">
-                                            Marevani toimet enim mõjutavad toiduained
-                                        </a>
-                                    </p>
-                                    <div class="collapse" id="collapseExample3">
-                                        <div class="card card-body">
-                                            Content
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Sulge</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row p-1">
-                <div class="col card rounded-3 shadow p-3 m-2">
-                    <img src="https://www.rosheta.com/upload/c099de7f60a8dcfadea59246fbe765040cecd645306f89f400dcf65e7c8fd20b.jpg" class="img-fluid rounded mx-auto" style="max-width: 300px" alt="vitamin">
-                    <p>Marevan'i info</p>
-                    <button type="button" class="btn btn-primary m-2" data-toggle="modal" data-target="#marevanModal">
-                        Vaata ravimi infot
-                    </button>
-                    <div class="modal fade" id="marevanModal" tabindex="-1" role="dialog" aria-labelledby="marevanModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="marevanModalLabel">Marevan'i info</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <p>
-                                        <a class="btn btn-primary" data-toggle="collapse" href="#marevan1" role="button" aria-expanded="false" aria-controls="marevan1">
-                                            Kuidas ravimit manustada?
-                                        </a>
-                                    </p>
-                                    <div class="collapse" id="marevan1">
-                                        <div class="card card-body">
-                                            <li>Content</li>
-                                        </div>
-                                    </div>
-                                    <p>
-                                        <a class="btn btn-primary" data-toggle="collapse" href="#marevan2" role="button" aria-expanded="false" aria-controls="marevan2">
-                                            Kõrvaltoimed
-                                        </a>
-                                    </p>
-                                    <div class="collapse" id="marevan2">
-                                        <div class="card card-body">
-                                            <li>Content</li>
-                                        </div>
-                                    </div>
-                                    <p>
-                                        <a class="btn btn-primary" data-toggle="collapse" href="#marevan3" role="button" aria-expanded="false" aria-controls="marevan3">
-                                            Elustiil
-                                        </a>
-                                    </p>
-                                    <div class="collapse" id="marevan3">
-                                        <div class="card card-body">
-                                            <li>Content</li>
-                                        </div>
-                                    </div>
-                                    <p>
-                                        <a class="btn btn-primary" data-toggle="collapse" href="#marevan4" role="button" aria-expanded="false" aria-controls="marevan4">
-                                            Marevan ja teised ravimid
-                                        </a>
-                                    </p>
-                                    <div class="collapse" id="marevan4">
-                                        <div class="card card-body">
-                                            <li>Content</li>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Sulge</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col card rounded-3 shadow p-3 m-2">
-                    <img src="https://www.vippng.com/png/detail/355-3554387_create-digital-profile-icon-blue-profile-icon-png.png" class="img-fluid rounded mx-auto" style="max-width: 300px">
-                    <p>Minu profiil</p>
-                    <button type="button" class="btn btn-primary m-2" data-toggle="modal" data-target="#profileModal">
-                        Vaata ja muuda profiili
-                    </button>
-                    <div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="profileModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="profileModalLabel">Minu profiil</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <form th:action="@{/editProfile}" method="post" th:object="${user}">
+                                    <div class="modal-body">
                                         <div class="form-group row">
-                                            <label class="col-sm-4 col-form-label">Nimi:</label>
+                                            <label class="col-sm-4 col-form-label">INR väärtus:</label>
                                             <div class="col-sm-8">
-                                                <input type="text" value="" name="username" class="form-control" required/>
+                                                <input type="text" value="" name="" class="form-control" required/>
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-sm-4 col-form-label">E-post:</label>
+                                            <label class="col-sm-4 col-form-label">INR kuupäev:</label>
                                             <div class="col-sm-8">
-                                                <input type="date" value="" name="email" class="form-control" required/>
+                                                <input type="date" value="" name="" class="form-control" required/>
                                             </div>
                                         </div>
-                                    </form>
+                                        <div class="form-group row">
+                                            <h6 class="modal-title mt-2 mb-3" id="inrPillNumber">Tablettide arv päevas</h6>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-4 col-form-label">Esmaspäev:</label>
+                                            <div class="col-sm-8">
+                                                <input type="number" value="" name="" class="form-control" required/>
+                                            </div>
+                                            <label class="col-sm-4 col-form-label">Teisipäev:</label>
+                                            <div class="col-sm-8">
+                                                <input type="number" value="" name="" class="form-control" required/>
+                                            </div>
+                                            <label class="col-sm-4 col-form-label">Kolmapäev:</label>
+                                            <div class="col-sm-8">
+                                                <input type="number" value="" name="" class="form-control" required/>
+                                            </div>
+                                            <label class="col-sm-4 col-form-label">Neljapäev:</label>
+                                            <div class="col-sm-8">
+                                                <input type="number" value="" name="" class="form-control" required/>
+                                            </div>
+                                            <label class="col-sm-4 col-form-label">Reede:</label>
+                                            <div class="col-sm-8">
+                                                <input type="number" value="" name="" class="form-control" required/>
+                                            </div>
+                                            <label class="col-sm-4 col-form-label">Laupäev:</label>
+                                            <div class="col-sm-8">
+                                                <input type="number" value="" name="" class="form-control" required/>
+                                            </div>
+                                            <label class="col-sm-4 col-form-label">Pühapäev:</label>
+                                            <div class="col-sm-8">
+                                                <input type="number" value="" name="" class="form-control" required/>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Sulge</button>
+                                        <button type="button" class="btn btn-primary">Salvesta muudatused</button>
+                                    </div>
                                 </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Sulge</button>
-                                    <button type="submit" class="btn btn-primary">Salvesta muudatused</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col card two-div rounded-3 p-3 m-3 clickable-card">
+                        <h5 class="text-center">MINU AJALUGU</h5>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="col card two-div rounded-3 p-3 m-3">
+                        <!-- Uses dynamic data from database later on -->
+                        <h5 class="text-center">TÄNANE ANNUS</h5>
+                        <p class="text-center">Laupäev - 20.12.2021</p>
+                        <p class="text-danger display-1 text-center mt-4">1.5</p>
+                    </div>
+                    <div class="col card one-div rounded-3 p-3 m-3 ">
+                        <h5 class="text-center">MAREVAN-I INFO</h5>
+                        <button type="button" class="btn btn-primary m-2" data-toggle="modal" data-target="#marevanModal">
+                            Vaata ravimi infot
+                        </button>
+                        <div class="modal fade" id="marevanModal" tabindex="-1" role="dialog" aria-labelledby="marevanModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="marevanModalLabel">Marevan'i info</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>
+                                            <a class="btn btn-primary" data-toggle="collapse" href="#marevan1" role="button" aria-expanded="false" aria-controls="marevan1">
+                                                Kuidas ravimit manustada?
+                                            </a>
+                                        </p>
+                                        <div class="collapse" id="marevan1">
+                                            <div class="card card-body">
+                                                <li>Content</li>
+                                            </div>
+                                        </div>
+                                        <p>
+                                            <a class="btn btn-primary" data-toggle="collapse" href="#marevan2" role="button" aria-expanded="false" aria-controls="marevan2">
+                                                Kõrvaltoimed
+                                            </a>
+                                        </p>
+                                        <div class="collapse" id="marevan2">
+                                            <div class="card card-body">
+                                                <li>Content</li>
+                                            </div>
+                                        </div>
+                                        <p>
+                                            <a class="btn btn-primary" data-toggle="collapse" href="#marevan3" role="button" aria-expanded="false" aria-controls="marevan3">
+                                                Elustiil
+                                            </a>
+                                        </p>
+                                        <div class="collapse" id="marevan3">
+                                            <div class="card card-body">
+                                                <li>Content</li>
+                                            </div>
+                                        </div>
+                                        <p>
+                                            <a class="btn btn-primary" data-toggle="collapse" href="#marevan4" role="button" aria-expanded="false" aria-controls="marevan4">
+                                                Marevan ja teised ravimid
+                                            </a>
+                                        </p>
+                                        <div class="collapse" id="marevan4">
+                                            <div class="card card-body">
+                                                <li>Content</li>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Sulge</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="col card one-div rounded-3 p-3 m-3 clickable-card" data-toggle="modal" data-target="#contactsModal">
+                        <h5 class="text-center">Olulised kontaktid</h5>
+                        <div class="modal fade" id="contactsModal" tabindex="-1" role="dialog" aria-labelledby="contactsModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="contactsModalLabel">Olulised kontaktid</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="form-group row">
+                                            <label class="col-sm-4 col-form-label">Tervishoiutöötaja:</label>
+                                            <div class="col-sm-8">
+                                                <input type="number" value="+372" name="" class="form-control"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-4 col-form-label">Lähedane:</label>
+                                            <div class="col-sm-8">
+                                                <input type="number" value="+372" name="" class="form-control"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-4 col-form-label">Hädaabi:</label>
+                                            <div class="col-sm-4 m-1">
+                                                <p>112</p>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-4 col-form-label">Mürgistusliin:</label>
+                                            <div class="col-sm-4 m-1">
+                                                <p>16662</p>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-4 col-form-label">24/7 perearstiliin:</label>
+                                            <div class="col-sm-4 m-1">
+                                                <p>1220</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Sulge</button>
+                                        <button type="submit" class="btn btn-primary">Salvesta muudatused</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col card one-div rounded-3 p-3 m-3">
+                        <h5 class="text-center">VITAMIIN K</h5>
+                        <button type="button" class="btn btn-primary m-2" data-toggle="modal" data-target="#vitaminModal">
+                            Vaata lisainfot
+                        </button>
+                        <div class="modal fade" id="vitaminModal" tabindex="-1" role="dialog" aria-labelledby="vitaminModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="vitaminModalLabel">Vitamiin K info</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>
+                                            <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                                Toiduained, milles on kõrge K-vitamiini sisaldus (madal INR viitab paksule verele)
+                                            </a>
+                                        </p>
+                                        <div class="collapse" id="collapseExample">
+                                            <div class="card card-body">
+                                                <li>köögiviljad (nt lehtpeet, spinat, lehtkapsas, maitseroheline, murulauk, rooskapsas)</li>
+                                                <li>mõned taimeõlid (nt rapsi-, soja- ja kõrvitsaseemneõli)</li>
+                                                <li>leidub ka maksas, lihas, munakollases ja piimatoodetes</li>
+                                            </div>
+                                        </div>
+                                        <p>
+                                            <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample2">
+                                                Toiduained, millel on madal K-vitamiini sisaldus
+                                            </a>
+                                        </p>
+                                        <div class="collapse" id="collapseExample2">
+                                            <div class="card card-body">
+                                                Content
+                                            </div>
+                                        </div>
+                                        <p>
+                                            <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample3">
+                                                Marevani toimet enim mõjutavad toiduained
+                                            </a>
+                                        </p>
+                                        <div class="collapse" id="collapseExample3">
+                                            <div class="card card-body">
+                                                Content
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Sulge</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                    </div>
+                    <div class="col card one-div rounded-3 p-3 m-3 clickable-card" data-toggle="modal" data-target="#profileModal">
+                        <h5 class="text-center">MINU PROFIIL</h5>
+                        <div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="profileModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="profileModalLabel">Minu profiil</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form th:action="@{/editProfile}" method="post" th:object="${user}">
+                                            <div class="form-group row">
+                                                <label class="col-sm-4 col-form-label">Nimi:</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" value="" name="username" class="form-control" required/>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-sm-4 col-form-label">E-post:</label>
+                                                <div class="col-sm-8">
+                                                    <input type="date" value="" name="email" class="form-control" required/>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Sulge</button>
+                                        <button type="submit" class="btn btn-primary">Salvesta muudatused</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="text-end">
+            <button type="submit" class="btn btn-primary m-2">Logi välja</button>
         </div>
     </div>
 </body>
