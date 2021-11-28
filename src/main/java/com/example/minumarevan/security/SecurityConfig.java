@@ -27,7 +27,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf().disable()
                 .authorizeRequests()
                 // add your resources here. By default, spring security blocks all resources that is not under /resources/**
-                .antMatchers(HttpMethod.GET, "/", "/index", "/home", "/login", "/webjars/**", "/js/**", "/css/**", "/images/**", "/register").permitAll()
+                .antMatchers(HttpMethod.GET, "/", "/index", "/home", "/login", "/webjars/**", "/js/**", "/static/**", "/css/**", "/images/**", "/register").permitAll()
                 // prevent spring security from blocking some pages that doesn't require authentication to be access here.
                 .antMatchers("/forgot-password", "/change-password").permitAll()
                 .antMatchers(HttpMethod.POST, "/register/save").permitAll()
