@@ -27,8 +27,8 @@ class UserControllerTests {
         User user = new User();
         user.setEmail("two@test.ee");
         user.setPassword("testPASSWORD123");
-        user.setFirstName("John");
-        user.setLastName("TestLastname");
+        user.setFirstname("John");
+        user.setLastname("TestLastname");
         user.setUsername("TestUsername");
 
         User savedUser = repo.save(user);
