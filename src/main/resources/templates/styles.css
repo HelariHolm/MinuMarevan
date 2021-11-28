@@ -1,3 +1,9 @@
-.background {
+body {
+    background-image: linear-gradient(to bottom right, rgba(139,0,0,1), rgba(139,0,0,0));
+    background-repeat: no-repeat;
+}
 
+#inrPillNumber {
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
