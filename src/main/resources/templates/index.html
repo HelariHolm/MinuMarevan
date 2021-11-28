@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Tere tulemast MinuMarevani</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+</head>
+<body>
+    <div class="text-center">
+        <h2>Tere tulemast MinuMarevani</h2>
+    </div>
+    <div>
+        <div class="text-center">
+            <button onclick="login()" type="submit" class="btn btn-primary btn-outline-dark m-2">Sisene</button>
+        </div>
+        <div class="text-center">
+            <button type="button" onclick="register()" class="btn btn-secondary btn-outline-dark m-2">Registreeru kasutajaks</button>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function login() {
+            window.location = "[[@{/login}]]";
+        }
+        function register() {
+            window.location = "[[@{/register}]]";
+        }
+    </script>
+    </script>
+</body>
+</html>
