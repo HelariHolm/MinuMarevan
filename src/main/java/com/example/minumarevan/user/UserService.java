@@ -22,4 +22,12 @@ public class UserService {
         }
         throw new UserNotFoundException("Could not find any users with ID = " + id);
     }
+
+    public User findUserByUsername(String username) throws UserNotFoundException {
+        Optional<User> result = repo.findByUsername(username);
+        if (result.isPresent()) {
+            return result.get();
+        }
+        throw new UserNotFoundException("Could not find any users with username = " + username);
+    }
 }
