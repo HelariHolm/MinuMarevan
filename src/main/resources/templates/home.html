@@ -5,6 +5,9 @@
 <th:block layout:insert="~{fragments/header}"/>
 <body>
     <div class="mx-auto w-75 container">
+        <div class="text-center">
+            <h2>Tere tulemast MinuMarevani!</h2>
+        </div>
         <div>
             <div class="row p-1">
                 <div class="col">
@@ -303,9 +306,9 @@
                 </div>
             </div>
         </div>
-        <div class="text-end">
-            <button type="submit" class="btn btn-primary m-2">Logi välja</button>
-        </div>
+        <form th:action="@{/logout}" method="post" class="text-end">
+            <button type="submit" class="btn btn-secondary btn-outline-dark m-2">Logi välja</button>
+        </form>
     </div>
 </body>
 </html>
