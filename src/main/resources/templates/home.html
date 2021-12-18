@@ -11,9 +11,11 @@
         <div>
             <div class="row p-1">
                 <div class="col">
-                    <div class="col card one-div rounded-3 p-3 m-3 clickable-card" data-toggle="modal"
-                         data-target="#inrModal">
+                    <div class="col card one-div rounded-3 p-3 m-3" >
                         <h5 class="text-center">UUS ANALÜÜS</h5>
+                        <button type="button" class="btn btn-primary m-2" data-toggle="modal" data-target="#inrModal">
+                            Vaata
+                        </button>
                         <div class="modal fade" id="inrModal" tabindex="-1" role="dialog" aria-labelledby="inrModalLabel"
                              aria-hidden="true">
                             <div class="modal-dialog" role="document">
@@ -78,8 +80,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col card two-div rounded-3 p-3 m-3 clickable-card">
+                    <div class="col card two-div rounded-3 p-3 m-3">
                         <h5 class="text-center">MINU AJALUGU</h5>
+                        <button type="button" class="btn btn-primary m-2" data-toggle="modal" data-target="#ajaluguModal">
+                            Vaata
+                        </button>
                     </div>
                 </div>
                 <div class="col">
@@ -176,9 +181,11 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="col card one-div rounded-3 p-3 m-3 clickable-card" data-toggle="modal"
-                         data-target="#contactsModal">
+                    <div class="col card one-div rounded-3 p-3 m-3">
                         <h5 class="text-center">Olulised kontaktid</h5>
+                        <button type="button" class="btn btn-primary m-2" data-toggle="modal" data-target="#contactsModal">
+                            Vaata
+                        </button>
                         <div class="modal fade" id="contactsModal" tabindex="-1" role="dialog"
                              aria-labelledby="contactsModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
@@ -283,9 +290,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col card one-div rounded-3 p-3 m-3 clickable-card" data-toggle="modal"
-                         data-target="#profileModal">
+                    <div class="col card one-div rounded-3 p-3 m-3" >
                         <h5 class="text-center">MINU PROFIIL</h5>
+                        <button type="button" class="btn btn-primary m-2" data-toggle="modal" data-target="#profileModal">
+                            Vaata
+                        </button>
                         <div th:object="${user}">
                             <p>ID: <span th:text="*{id}"></span></p>
                             <p>E-post: <span th:text="*{email}"></span></p>
