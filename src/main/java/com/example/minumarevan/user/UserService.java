@@ -30,4 +30,12 @@ public class UserService {
         }
         throw new UserNotFoundException("Could not find any users with username = " + username);
     }
+
+    public User findUserByEmail(String email) throws UserNotFoundException{
+        Optional<User> result = repo.findByEmail(email);
+        if (result.isPresent()) {
+            return result.get();
+        }
+        throw new UserNotFoundException("Could not find any users with username = " + email);
+    }
 }
