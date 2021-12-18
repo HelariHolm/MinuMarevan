@@ -59,7 +59,7 @@ public class UserController {
             userToSave.setPassword(user.getPassword());
             userToSave.setUsername(user.getUsername());
             service.save(user);
-            return "redirect:/home";
+            return "redirect:/loginSuccess";
         } catch (UserNotFoundException ex) {
             ex.printStackTrace();
             return ex.getMessage();

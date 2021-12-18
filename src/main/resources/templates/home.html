@@ -298,12 +298,6 @@
                         <button type="button" class="btn btn-primary m-2" data-toggle="modal" data-target="#profileModal">
                             Vaata
                         </button>
-                        <div th:object="${user}">
-                            <p>ID: <span th:text="*{id}"></span></p>
-                            <p>E-post: <span th:text="*{email}"></span></p>
-                            <p>Eesnimi: <span th:text="*{firstname}"></span></p>
-                            <p>Perenimi: <span th:text="*{lastname}"></span></p>
-                        </div>
                         <div class="modal fade" id="profileModal" tabindex="-1" role="dialog"
                              aria-labelledby="profileModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
@@ -311,35 +305,36 @@
                                     <div class="modal-header">
                                         <h5 class="modal-title" id="profileModalLabel">Minu profiil</h5>
                                     </div>
+                                    <form th:action="@{'/editProfile/' + ${user.id}}" method="post" th:object="${user}">
                                     <div class="modal-body">
-                                        <form th:action="@{'/editProfile/' + ${user.id}}" method="post" th:object="${user}">
                                             <input type="hidden" th:field="*{id}">
                                             <input type="hidden" th:field="*{username}">
                                             <input type="hidden" th:field="*{password}">
                                             <div class="form-group row">
                                                 <label class="col-sm-4 col-form-label">Eesnimi:</label>
                                                 <div class="col-sm-8">
-                                                    <input type="text" name="firstname" class="form-control" required/>
+                                                    <input type="text" th:value="${user.firstname}" name="firstname" class="form-control" required/>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-sm-4 col-form-label">Perekonnanimi:</label>
                                                 <div class="col-sm-8">
-                                                    <input type="text" name="lastname" class="form-control" required/>
+                                                    <input type="text" th:value="${user.lastname}" name="lastname" class="form-control" required/>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-sm-4 col-form-label">E-post:</label>
                                                 <div class="col-sm-8">
-                                                    <input type="email" name="email" class="form-control" required/>
+                                                    <input type="email" th:value="${user.email}" name="email" class="form-control" required/>
                                                 </div>
                                             </div>
-                                        </form>
+
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Sulge</button>
                                         <button type="submit" class="btn btn-primary">Salvesta muudatused</button>
                                     </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
