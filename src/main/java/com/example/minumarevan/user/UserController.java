@@ -11,10 +11,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import java.util.Comparator;
-import java.util.List;
-import java.util.Optional;
-import java.util.Set;
+import java.text.SimpleDateFormat;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Controller
@@ -48,12 +46,15 @@ public class UserController {
         // TODO: null check
         ContactNumbers numbers = user.getContactNumbers();
         Set<Analysis> analyses = user.getAnalyses();
-        List<Analysis> analysesSorted = analyses.stream().sorted(Comparator.comparing(Analysis::getInrDate)).collect(Collectors.toList());
-        // Analysis analysis = user.getAnalysis();
+        List<Analysis> analysesSorted = analyses.stream().sorted(Comparator.comparing(Analysis::getInrDate).reversed()).collect(Collectors.toList());
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        Date date = new Date();
 
         model.addAttribute("user", user);
         model.addAttribute("numbers", numbers);
         model.addAttribute("analyses", analysesSorted);
+        model.addAttribute("latestInr", analysesSorted.get(0).getInr());
+        model.addAttribute("today", formatter.format(date));
 
         return "home";
     }

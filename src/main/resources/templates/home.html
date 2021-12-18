@@ -140,8 +140,8 @@
                     <div class="col card two-div rounded-3 p-3 m-3">
                         <!-- Uses dynamic data from database later on -->
                         <h5 class="text-center">TÄNANE ANNUS</h5>
-                        <p class="text-center">Laupäev - 20.12.2021</p>
-                        <p class="text-danger display-1 text-center mt-4">1.5</p>
+                        <p class="text-center" th:text="${today}"/>
+                        <p class="text-danger display-1 text-center mt-4" th:text="${latestInr}"/>
                     </div>
                     <div class="col card one-div rounded-3 p-3 m-3 ">
                         <h5 class="text-center">MAREVANI INFO</h5>
