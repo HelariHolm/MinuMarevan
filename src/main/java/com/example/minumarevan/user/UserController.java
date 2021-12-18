@@ -1,5 +1,6 @@
 package com.example.minumarevan.user;
 
+import com.example.minumarevan.model.Analysis;
 import com.example.minumarevan.model.ContactNumbers;
 import com.example.minumarevan.service.ContactNumbersService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,9 +43,11 @@ public class UserController {
         User user = service.findUserByUsername(username);
         // TODO: null check
         ContactNumbers numbers = user.getContactNumbers();
+        Analysis analysis = user.getAnalysis();
 
         model.addAttribute("user", user);
         model.addAttribute("numbers", numbers);
+        model.addAttribute("analysis", analysis);
 
         return "home";
     }

@@ -1,5 +1,6 @@
 package com.example.minumarevan;
 
+import com.example.minumarevan.repository.AnalysisRepository;
 import com.example.minumarevan.repository.ContactNumbersRepository;
 import com.example.minumarevan.user.UserRepository;
 import org.springframework.boot.SpringApplication;
@@ -15,7 +16,8 @@ import javax.servlet.annotation.MultipartConfig;
 //@EnableJpaRepositories(basePackageClasses = UserRepository.class)
 @EnableJpaRepositories(basePackageClasses={
         UserRepository.class,
-        ContactNumbersRepository.class
+        ContactNumbersRepository.class,
+        AnalysisRepository.class
 })
 public class MinuMarevanApplication {
 
