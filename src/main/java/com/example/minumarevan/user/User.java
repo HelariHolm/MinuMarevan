@@ -1,5 +1,6 @@
 package com.example.minumarevan.user;
 
+import com.example.minumarevan.model.Analysis;
 import com.example.minumarevan.model.ContactNumbers;
 import lombok.*;
 
@@ -31,5 +32,9 @@ public class User {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "contact_numbers_id", referencedColumnName = "id")
     private ContactNumbers contactNumbers;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "analysis_id", referencedColumnName = "id")
+    private Analysis analysis;
 
 }

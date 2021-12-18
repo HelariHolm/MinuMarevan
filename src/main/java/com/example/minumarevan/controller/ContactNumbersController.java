@@ -25,8 +25,15 @@ public class ContactNumbersController {
     @PostMapping("/contact-numbers/save")
     public String saveContactNumbers(ContactNumbers numbers, RedirectAttributes ra) throws UserNotFoundException {
         final Integer userId = getLoggedInUserId();
-        numbers.setId(userId);
-        contactNumbersService.save(numbers);
+        User user = userService.get(userId);
+
+        ContactNumbers userNumbers = user.getContactNumbers();
+        userNumbers.setDoctor(numbers.getDoctor());
+        userNumbers.setNextOfKin(numbers.getNextOfKin());
+
+        user.setContactNumbers(userNumbers);
+
+        userService.save(user);
 
         ra.addFlashAttribute("message", "The User has been saved successfully!");
         return "redirect:/loginSuccess";

@@ -41,7 +41,7 @@ public class UserController {
 
         User user = service.findUserByUsername(username);
         // TODO: null check
-        ContactNumbers numbers = contactNumbersService.get(user.getId()).get();
+        ContactNumbers numbers = user.getContactNumbers();
 
         model.addAttribute("user", user);
         model.addAttribute("numbers", numbers);
