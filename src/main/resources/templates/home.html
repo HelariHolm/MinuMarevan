@@ -246,31 +246,31 @@
                                           style="max-width: 500px; margin: 0 auto">
                                     <div class="modal-body">
                                             <div class="form-group row">
-                                                <label class="col-sm-4 col-form-label">Tervishoiutöötaja:</label>
-                                                <div class="col-sm-8">
+                                                <label class="col-sm-6 col-form-label">Tervishoiutöötaja:</label>
+                                                <div class="col-sm-6">
                                                     <input type="number" th:value="${numbers.doctor}" name="doctor" class="form-control"/>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-sm-4 col-form-label">Lähedane:</label>
-                                                <div class="col-sm-8">
+                                                <label class="col-sm-6 col-form-label">Lähedane:</label>
+                                                <div class="col-sm-6">
                                                     <input type="number" th:value="${numbers.nextOfKin}" name="nextOfKin" class="form-control"/>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-sm-4 col-form-label">Hädaabi:</label>
+                                                <label class="col-sm-6 col-form-label">Hädaabi:</label>
                                                 <div class="col-sm-4 m-1">
                                                     <p>112</p>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-sm-4 col-form-label">Mürgistusliin:</label>
+                                                <label class="col-sm-6 col-form-label">Mürgistusliin:</label>
                                                 <div class="col-sm-4 m-1">
                                                     <p>16662</p>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-sm-4 col-form-label">24/7 perearstiliin:</label>
+                                                <label class="col-sm-6 col-form-label">24/7 perearstiliin:</label>
                                                 <div class="col-sm-4 m-1">
                                                     <p>1220</p>
                                                 </div>
@@ -359,6 +359,7 @@
                                             <input type="hidden" th:field="*{id}">
                                             <input type="hidden" th:field="*{username}">
                                             <input type="hidden" th:field="*{password}">
+                                            <input type="hidden" th:field="*{contactNumbers}">
                                             <div class="form-group row">
                                                 <label class="col-sm-4 col-form-label">Eesnimi:</label>
                                                 <div class="col-sm-8">
@@ -377,7 +378,6 @@
                                                     <input type="email" th:value="${user.email}" name="email" class="form-control" required/>
                                                 </div>
                                             </div>
-
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Sulge</button>

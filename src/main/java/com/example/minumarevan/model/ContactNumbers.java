@@ -11,7 +11,6 @@ import javax.persistence.*;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
 public class ContactNumbers {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
