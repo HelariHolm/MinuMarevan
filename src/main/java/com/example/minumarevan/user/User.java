@@ -5,6 +5,7 @@ import com.example.minumarevan.model.ContactNumbers;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "user")
@@ -33,8 +34,6 @@ public class User {
     @JoinColumn(name = "contact_numbers_id", referencedColumnName = "id")
     private ContactNumbers contactNumbers;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "analysis_id", referencedColumnName = "id")
-    private Analysis analysis;
-
+    @OneToMany(mappedBy = "user")
+    private Set<Analysis> analyses;
 }

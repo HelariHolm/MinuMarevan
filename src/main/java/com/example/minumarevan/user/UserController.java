@@ -43,11 +43,11 @@ public class UserController {
         User user = service.findUserByUsername(username);
         // TODO: null check
         ContactNumbers numbers = user.getContactNumbers();
-        Analysis analysis = user.getAnalysis();
+        // Analysis analysis = user.getAnalysis();
 
         model.addAttribute("user", user);
         model.addAttribute("numbers", numbers);
-        model.addAttribute("analysis", analysis);
+        // model.addAttribute("analysis", analysis);
 
         return "home";
     }

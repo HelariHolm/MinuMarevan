@@ -23,19 +23,20 @@
                                     <div class="modal-header">
                                         <h5 class="modal-title" id="inrModalLabel">Sisesta INR väärtus</h5>
                                     </div>
-                                    <form th:action="@{/analysis/save}" method="post" th:object="${analysis}"
+                                    <!-- th:object="${analysis}" -->
+                                    <form th:action="@{/analysis/save}" method="post"
                                           style="max-width: 500px; margin: 0 auto">
                                     <div class="modal-body">
                                         <div class="form-group row">
                                             <label class="col-sm-4 col-form-label">INR väärtus:</label>
                                             <div class="col-sm-8">
-                                                <input type="text" th:value="${analysis.inr}" name="inr" class="form-control" required/>
+                                                <input type="text" name="inr" class="form-control" required/>
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-sm-4 col-form-label">INR kuupäev:</label>
                                             <div class="col-sm-8">
-                                                <input type="date" th:value="${analysis.inrDate}" name="inrDate" class="form-control" required/>
+                                                <input type="date" name="inrDate" class="form-control" required/>
                                             </div>
                                         </div>
                                         <div class="form-group row">
@@ -44,31 +45,31 @@
                                         <div class="form-group row">
                                             <label class="col-sm-4 col-form-label">Esmaspäev:</label>
                                             <div class="col-sm-8">
-                                                <input type="number" th:value="${analysis.mondayPills}" name="mondayPills" class="form-control" required/>
+                                                <input type="number" name="mondayPills" class="form-control" required/>
                                             </div>
                                             <label class="col-sm-4 col-form-label">Teisipäev:</label>
                                             <div class="col-sm-8">
-                                                <input type="number" th:value="${analysis.tuesdayPills}" name="tuesdayPills" class="form-control" required/>
+                                                <input type="number" name="tuesdayPills" class="form-control" required/>
                                             </div>
                                             <label class="col-sm-4 col-form-label">Kolmapäev:</label>
                                             <div class="col-sm-8">
-                                                <input type="number" th:value="${analysis.wednesdayPills}" name="wednesdayPills" class="form-control" required/>
+                                                <input type="number" name="wednesdayPills" class="form-control" required/>
                                             </div>
                                             <label class="col-sm-4 col-form-label">Neljapäev:</label>
                                             <div class="col-sm-8">
-                                                <input type="number" th:value="${analysis.thursdayPills}" name="thursdayPills" class="form-control" required/>
+                                                <input type="number" name="thursdayPills" class="form-control" required/>
                                             </div>
                                             <label class="col-sm-4 col-form-label">Reede:</label>
                                             <div class="col-sm-8">
-                                                <input type="number" th:value="${analysis.fridayPills}" name="fridayPills" class="form-control" required/>
+                                                <input type="number" name="fridayPills" class="form-control" required/>
                                             </div>
                                             <label class="col-sm-4 col-form-label">Laupäev:</label>
                                             <div class="col-sm-8">
-                                                <input type="number" th:value="${analysis.saturdayPills}" name="saturdayPills" class="form-control" required/>
+                                                <input type="number" name="saturdayPills" class="form-control" required/>
                                             </div>
                                             <label class="col-sm-4 col-form-label">Pühapäev:</label>
                                             <div class="col-sm-8">
-                                                <input type="number" th:value="${analysis.sundayPills}" name="sundayPills" class="form-control" required/>
+                                                <input type="number" name="sundayPills" class="form-control" required/>
                                             </div>
                                         </div>
                                     </div>

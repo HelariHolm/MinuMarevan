@@ -15,6 +15,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.util.Set;
+
 @Controller
 public class AnalysisController {
 
@@ -29,20 +31,8 @@ public class AnalysisController {
         final Integer userId = getLoggedInUserId();
         User user = userService.get(userId);
 
-        Analysis userAnalysis = user.getAnalysis();
-        userAnalysis.setInr(analysis.getInr());
-        userAnalysis.setInrDate(analysis.getInrDate());
-        userAnalysis.setMondayPills(analysis.getMondayPills());
-        userAnalysis.setTuesdayPills(analysis.getTuesdayPills());
-        userAnalysis.setWednesdayPills(analysis.getWednesdayPills());
-        userAnalysis.setThursdayPills(analysis.getThursdayPills());
-        userAnalysis.setFridayPills(analysis.getFridayPills());
-        userAnalysis.setSaturdayPills(analysis.getSaturdayPills());
-        userAnalysis.setSundayPills(analysis.getSundayPills());
-
-        user.setAnalysis(userAnalysis);
-
-        userService.save(user);
+        analysis.setUser(user);
+        analysisService.save(analysis);
 
         ra.addFlashAttribute("message", "The Analysis has been saved successfully!");
         return "redirect:/loginSuccess";

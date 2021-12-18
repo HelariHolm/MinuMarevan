@@ -46,6 +46,7 @@ public class Analysis {
     @Column(nullable = false, name = "sundayPills")
     private Float sundayPills;
 
-    @OneToOne(mappedBy = "analysis")
+    @ManyToOne
+    @JoinColumn(name="user_id", nullable=false)
     private User user;
 }
