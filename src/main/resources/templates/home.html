@@ -87,6 +87,53 @@
                         <button type="button" class="btn btn-primary m-2" data-toggle="modal" data-target="#ajaluguModal">
                             Vaata
                         </button>
+
+                        <div class="modal fade" id="ajaluguModal" tabindex="-1" role="dialog"
+                             aria-labelledby="ajaluguModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title text-center" id="ajaluguModalLabel">Minu ajalugu</h5>
+                                    </div>
+                                        <div class="modal-body">
+                                            <div class="form-group row">
+                                                <div class="col">
+                                                    <table class="table table-striped">
+                                                        <thead>
+                                                            <tr>
+                                                                <th scope="col">Kuupäev</th>
+                                                                <th scope="col">INR</th>
+                                                                <th scope="col">Tablettide arv</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr th:each="analysis: ${analyses} ">
+                                                                <th th:text="${analysis.inrDate}"/>
+                                                                <th scope="row" th:text="${analysis.inr}"/>
+                                                                <th th:text="${analysis.getTotalPills()}"/>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Sulge</button>
+                                            <button type="button" class="btn btn-primary">Salvesta muudatused</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
                     </div>
                 </div>
                 <div class="col">

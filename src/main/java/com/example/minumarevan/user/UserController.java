@@ -11,7 +11,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.util.Comparator;
+import java.util.List;
 import java.util.Optional;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @Controller
 public class UserController {
@@ -43,11 +47,13 @@ public class UserController {
         User user = service.findUserByUsername(username);
         // TODO: null check
         ContactNumbers numbers = user.getContactNumbers();
+        Set<Analysis> analyses = user.getAnalyses();
+        List<Analysis> analysesSorted = analyses.stream().sorted(Comparator.comparing(Analysis::getInrDate)).collect(Collectors.toList());
         // Analysis analysis = user.getAnalysis();
 
         model.addAttribute("user", user);
         model.addAttribute("numbers", numbers);
-        // model.addAttribute("analysis", analysis);
+        model.addAttribute("analyses", analysesSorted);
 
         return "home";
     }

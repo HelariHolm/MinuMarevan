@@ -49,4 +49,8 @@ public class Analysis {
     @ManyToOne
     @JoinColumn(name="user_id", nullable=false)
     private User user;
+
+    public Float getTotalPills() {
+        return mondayPills + tuesdayPills + wednesdayPills + thursdayPills + fridayPills + saturdayPills + sundayPills;
+    }
 }
