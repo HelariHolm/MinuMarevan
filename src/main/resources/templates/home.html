@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en"
       xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:sec="http://www.w3.org/1999/xhtml">
 <th:block layout:insert="~{fragments/header}"/>
 <body>
     <div class="mx-auto w-75 container">
-        <div class="text-center">
-            <h2>Tere tulemast MinuMarevani!</h2>
+        <div class="text-center p-4" sec:authorize="isAuthenticated()">
+            <h2>Tere tulemast MinuMarevani, <span sec:authentication="name"></span>!</h2>
         </div>
         <div>
             <div class="row p-1">
                 <div class="col">
-                    <div class="col card one-div rounded-3 p-3 m-3 clickable-card" data-toggle="modal" data-target="#inrModal">
+                    <div class="col card one-div rounded-3 p-3 m-3 clickable-card" data-toggle="modal"
+                         data-target="#inrModal">
                         <h5 class="text-center">UUS ANALÜÜS</h5>
-                        <div class="modal fade" id="inrModal" tabindex="-1" role="dialog" aria-labelledby="intModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="inrModal" tabindex="-1" role="dialog" aria-labelledby="inrModalLabel"
+                             aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -95,7 +97,8 @@
                         <button type="button" class="btn btn-primary m-2" data-toggle="modal" data-target="#marevanModal">
                             Vaata
                         </button>
-                        <div class="modal fade" id="marevanModal" tabindex="-1" role="dialog" aria-labelledby="marevanModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="marevanModal" tabindex="-1" role="dialog"
+                             aria-labelledby="marevanModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -106,21 +109,29 @@
                                     </div>
                                     <div class="modal-body">
                                         <p>
-                                            <a class="btn btn-primary" data-toggle="collapse" href="#marevan1" role="button" aria-expanded="false" aria-controls="marevan1">
+                                            <a class="btn btn-primary" data-toggle="collapse" href="#marevan1" role="button"
+                                               aria-expanded="false" aria-controls="marevan1">
                                                 Kuidas ravimit manustada?
                                             </a>
                                         </p>
                                         <div class="collapse" id="marevan1">
                                             <div class="card card-body">
                                                 <li>Võta Marevani iga päev samal ajal</li>
-                                                <li>Kui unustad ravimi võtmata, siis ära kunagi võta seda tagantjärgi koos järgmise doosiga, vaid helista tervishoiutöötajale</li>
-                                                <li>Veritsuse või trombi kahtluse korral teavita sellest kohe atervishoiutöötajat või pöördu EMO-sse</li>
-                                                <li>Anna vereanalüüsid selleks ettenähtud graafiku alusel. Kui Sa ei saa õigel päeva analüüsi anda, siis lepi kokku uus sobiv aeg</li>
+                                                <li>Kui unustad ravimi võtmata, siis ära kunagi võta seda tagantjärgi koos
+                                                    järgmise doosiga, vaid helista tervishoiutöötajale
+                                                </li>
+                                                <li>Veritsuse või trombi kahtluse korral teavita sellest kohe
+                                                    atervishoiutöötajat või pöördu EMO-sse
+                                                </li>
+                                                <li>Anna vereanalüüsid selleks ettenähtud graafiku alusel. Kui Sa ei saa
+                                                    õigel päeva analüüsi anda, siis lepi kokku uus sobiv aeg
+                                                </li>
                                                 <li>Püüa hoida K-vitamiini hulk toidus ühtlane</li>
                                             </div>
                                         </div>
                                         <p>
-                                            <a class="btn btn-primary" data-toggle="collapse" href="#marevan2" role="button" aria-expanded="false" aria-controls="marevan2">
+                                            <a class="btn btn-primary" data-toggle="collapse" href="#marevan2" role="button"
+                                               aria-expanded="false" aria-controls="marevan2">
                                                 Kõrvaltoimed
                                             </a>
                                         </p>
@@ -134,7 +145,8 @@
                                             </div>
                                         </div>
                                         <p>
-                                            <a class="btn btn-primary" data-toggle="collapse" href="#marevan3" role="button" aria-expanded="false" aria-controls="marevan3">
+                                            <a class="btn btn-primary" data-toggle="collapse" href="#marevan3" role="button"
+                                               aria-expanded="false" aria-controls="marevan3">
                                                 Elustiil
                                             </a>
                                         </p>
@@ -148,7 +160,8 @@
                                             </div>
                                         </div>
                                         <p>
-                                            <a class="btn btn-primary" data-toggle="collapse" href="#marevan4" role="button" aria-expanded="false" aria-controls="marevan4">
+                                            <a class="btn btn-primary" data-toggle="collapse" href="#marevan4" role="button"
+                                               aria-expanded="false" aria-controls="marevan4">
                                                 Marevan ja teised ravimid
                                             </a>
                                         </p>
@@ -169,9 +182,11 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="col card one-div rounded-3 p-3 m-3 clickable-card" data-toggle="modal" data-target="#contactsModal">
-                        <h5 class="text-center">OLULISED KONTAKTID</h5>
-                        <div class="modal fade" id="contactsModal" tabindex="-1" role="dialog" aria-labelledby="contactsModalLabel" aria-hidden="true">
+                    <div class="col card one-div rounded-3 p-3 m-3 clickable-card" data-toggle="modal"
+                         data-target="#contactsModal">
+                        <h5 class="text-center">Olulised kontaktid</h5>
+                        <div class="modal fade" id="contactsModal" tabindex="-1" role="dialog"
+                             aria-labelledby="contactsModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -225,7 +240,8 @@
                         <button type="button" class="btn btn-primary m-2" data-toggle="modal" data-target="#vitaminModal">
                             Vaata
                         </button>
-                        <div class="modal fade" id="vitaminModal" tabindex="-1" role="dialog" aria-labelledby="vitaminModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="vitaminModal" tabindex="-1" role="dialog"
+                             aria-labelledby="vitaminModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -236,8 +252,10 @@
                                     </div>
                                     <div class="modal-body">
                                         <p>
-                                            <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                                                Toiduained, milles on kõrge K-vitamiini sisaldus (madal INR viitab paksule verele)
+                                            <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample"
+                                               role="button" aria-expanded="false" aria-controls="collapseExample">
+                                                Toiduained, milles on kõrge K-vitamiini sisaldus (madal INR viitab paksule
+                                                verele)
                                             </a>
                                         </p>
                                         <div class="collapse" id="collapseExample">
@@ -248,7 +266,8 @@
                                             </div>
                                         </div>
                                         <p>
-                                            <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample2">
+                                            <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample2"
+                                               role="button" aria-expanded="false" aria-controls="collapseExample2">
                                                 Toiduained, millel on madal K-vitamiini sisaldus
                                             </a>
                                         </p>
@@ -258,7 +277,8 @@
                                             </div>
                                         </div>
                                         <p>
-                                            <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample3">
+                                            <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample3"
+                                               role="button" aria-expanded="false" aria-controls="collapseExample3">
                                                 Marevani toimet enim mõjutavad toiduained
                                             </a>
                                         </p>
@@ -273,10 +293,19 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>                    </div>
-                    <div class="col card one-div rounded-3 p-3 m-3 clickable-card" data-toggle="modal" data-target="#profileModal">
+                        </div>
+                    </div>
+                    <div class="col card one-div rounded-3 p-3 m-3 clickable-card" data-toggle="modal"
+                         data-target="#profileModal">
                         <h5 class="text-center">MINU PROFIIL</h5>
-                        <div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="profileModalLabel" aria-hidden="true">
+                        <div th:object="${user}">
+                            <p>ID: <span th:text="*{id}"></span></p>
+                            <p>E-post: <span th:text="*{email}"></span></p>
+                            <p>Eesnimi: <span th:text="*{firstname}"></span></p>
+                            <p>Perenimi: <span th:text="*{lastname}"></span></p>
+                        </div>
+                        <div class="modal fade" id="profileModal" tabindex="-1" role="dialog"
+                             aria-labelledby="profileModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -286,17 +315,26 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <form th:action="@{/editProfile}" method="post" th:object="${user}">
+                                        <form th:action="@{'/editProfile/' + ${user.id}}" method="post" th:object="${user}">
+                                            <input type="hidden" th:field="*{id}">
+                                            <input type="hidden" th:field="*{username}">
+                                            <input type="hidden" th:field="*{password}">
                                             <div class="form-group row">
-                                                <label class="col-sm-4 col-form-label">Nimi:</label>
+                                                <label class="col-sm-4 col-form-label">Eesnimi:</label>
                                                 <div class="col-sm-8">
-                                                    <input type="text" value="" name="username" class="form-control" required/>
+                                                    <input type="text" name="firstname" class="form-control" required/>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-sm-4 col-form-label">Perekonnanimi:</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" name="lastname" class="form-control" required/>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-sm-4 col-form-label">E-post:</label>
                                                 <div class="col-sm-8">
-                                                    <input type="date" value="" name="email" class="form-control" required/>
+                                                    <input type="email" name="email" class="form-control" required/>
                                                 </div>
                                             </div>
                                         </form>
