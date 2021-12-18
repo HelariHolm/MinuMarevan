@@ -68,6 +68,7 @@ public class UserController {
             userToSave.setEmail(user.getEmail());
             userToSave.setPassword(user.getPassword());
             userToSave.setUsername(user.getUsername());
+            userToSave.setContactNumbers(user.getContactNumbers());
             service.save(user);
             return "redirect:/loginSuccess";
         } catch (UserNotFoundException ex) {
