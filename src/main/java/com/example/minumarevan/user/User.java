@@ -1,5 +1,6 @@
 package com.example.minumarevan.user;
 
+import com.example.minumarevan.model.ContactNumbers;
 import lombok.*;
 
 import javax.persistence.*;
@@ -26,5 +27,9 @@ public class User {
     private String password;
     @Column(length = 30, nullable = false)
     private String username;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "contact_numbers_id", referencedColumnName = "id")
+    private ContactNumbers contactNumbers;
 
 }

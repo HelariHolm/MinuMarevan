@@ -193,42 +193,45 @@
                                     <div class="modal-header">
                                         <h5 class="modal-title" id="contactsModalLabel">Olulised kontaktid</h5>
                                     </div>
+                                    <form th:action="@{/contact-numbers/save}" method="post" th:object="${numbers}"
+                                          style="max-width: 500px; margin: 0 auto">
                                     <div class="modal-body">
-                                        <div class="form-group row">
-                                            <label class="col-sm-4 col-form-label">Tervishoiutöötaja:</label>
-                                            <div class="col-sm-8">
-                                                <input type="number" value="+372" name="" class="form-control"/>
+                                            <div class="form-group row">
+                                                <label class="col-sm-4 col-form-label">Tervishoiutöötaja:</label>
+                                                <div class="col-sm-8">
+                                                    <input type="number" th:value="${numbers.doctor}" name="doctor" class="form-control"/>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-sm-4 col-form-label">Lähedane:</label>
-                                            <div class="col-sm-8">
-                                                <input type="number" value="+372" name="" class="form-control"/>
+                                            <div class="form-group row">
+                                                <label class="col-sm-4 col-form-label">Lähedane:</label>
+                                                <div class="col-sm-8">
+                                                    <input type="number" th:value="${numbers.nextOfKin}" name="nextOfKin" class="form-control"/>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-sm-4 col-form-label">Hädaabi:</label>
-                                            <div class="col-sm-4 m-1">
-                                                <p>112</p>
+                                            <div class="form-group row">
+                                                <label class="col-sm-4 col-form-label">Hädaabi:</label>
+                                                <div class="col-sm-4 m-1">
+                                                    <p>112</p>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-sm-4 col-form-label">Mürgistusliin:</label>
-                                            <div class="col-sm-4 m-1">
-                                                <p>16662</p>
+                                            <div class="form-group row">
+                                                <label class="col-sm-4 col-form-label">Mürgistusliin:</label>
+                                                <div class="col-sm-4 m-1">
+                                                    <p>16662</p>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-sm-4 col-form-label">24/7 perearstiliin:</label>
-                                            <div class="col-sm-4 m-1">
-                                                <p>1220</p>
+                                            <div class="form-group row">
+                                                <label class="col-sm-4 col-form-label">24/7 perearstiliin:</label>
+                                                <div class="col-sm-4 m-1">
+                                                    <p>1220</p>
+                                                </div>
                                             </div>
-                                        </div>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Sulge</button>
                                         <button type="submit" class="btn btn-primary">Salvesta muudatused</button>
                                     </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
