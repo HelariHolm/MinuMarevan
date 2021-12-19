@@ -2,6 +2,7 @@ package com.example.minumarevan.user;
 
 import com.example.minumarevan.model.Analysis;
 import com.example.minumarevan.model.ContactNumbers;
+import com.example.minumarevan.model.UserRegisterRequest;
 import com.example.minumarevan.service.ContactNumbersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -31,7 +32,20 @@ public class UserController {
     }
 
     @PostMapping("/register/save")
-    public String saveUser(User user, RedirectAttributes ra) {
+    public String saveUser(UserRegisterRequest request, RedirectAttributes ra) {
+        final User user = new User();
+        user.setFirstname(request.getFirstname());
+        user.setLastname(request.getLastname());
+        user.setPassword(request.getPassword());
+        user.setEmail(request.getEmail());
+        user.setUsername(request.getUsername());
+
+        ContactNumbers numbers = new ContactNumbers();
+        numbers.setDoctor(request.getDoctor());
+        numbers.setNextOfKin(request.getNextOfKin());
+
+        user.setContactNumbers(numbers);
+
         service.save(user);
         ra.addFlashAttribute("message", "The User has been saved successfully!");
         return "redirect:/login";

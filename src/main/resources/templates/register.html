@@ -8,9 +8,8 @@
     <div class="text-center">
         <h1 class="p-4">Registreeru MinuMarevani kasutajaks</h1>
     </div>
-    <form th:action="@{/register/save}" method="post" th:object="${user}" style="max-width: 500px; margin: 0 auto">
+    <form th:action="@{/register/save}" method="post" th:object="${request}" style="max-width: 500px; margin: 0 auto">
         <div class="border border-secondary rounded p-3">
-            <input type="hidden" th:field="*{id}">
             <div class="form-group row">
                 <label class="col-sm-4 col-form-label">Eesnimi:</label>
                 <div class="col-sm-8">
@@ -39,6 +38,18 @@
                 <label class="col-sm-4 col-form-label">Salasõna:</label>
                 <div class="col-sm-8">
                     <input type="password" name="password" class="form-control" required/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Tervishoijutöötaja:</label>
+                <div class="col-sm-8">
+                    <input type="number" name="doctor" class="form-control" required/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Lähedane:</label>
+                <div class="col-sm-8">
+                    <input type="number" name="nextOfKin" class="form-control" required/>
                 </div>
             </div>
             <div class="text-center">

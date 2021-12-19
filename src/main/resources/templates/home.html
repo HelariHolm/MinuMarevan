@@ -107,11 +107,13 @@
                                                             </tr>
                                                         </thead>
                                                         <tbody>
-                                                            <tr th:each="analysis: ${analyses} ">
-                                                                <th th:text="${analysis.inrDate}"/>
-                                                                <th scope="row" th:text="${analysis.inr}"/>
-                                                                <th th:text="${analysis.getTotalPills()}"/>
-                                                            </tr>
+                                                            <div th:if="${not #lists.isEmpty(analyses)}">
+                                                                <tr th:each="analysis: ${analyses} ">
+                                                                    <th th:text="${analysis.inrDate}"/>
+                                                                    <th scope="row" th:text="${analysis.inr}"/>
+                                                                    <th th:text="${analysis.getTotalPills()}"/>
+                                                                </tr>
+                                                            </div>
                                                         </tbody>
                                                     </table>
 
