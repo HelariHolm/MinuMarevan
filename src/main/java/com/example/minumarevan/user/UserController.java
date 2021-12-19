@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -49,11 +50,28 @@ public class UserController {
         List<Analysis> analysesSorted = analyses.stream().sorted(Comparator.comparing(Analysis::getInrDate).reversed()).collect(Collectors.toList());
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         Date date = new Date();
+        int day = date.getDay();
+        float pills = 0;
+        if (day == 1) {
+            pills = analysesSorted.get(0).getMondayPills();
+        } else if (day == 2) {
+            pills = analysesSorted.get(0).getTuesdayPills();
+        } else if (day == 3) {
+            pills = analysesSorted.get(0).getWednesdayPills();
+        } else if (day == 4) {
+            pills = analysesSorted.get(0).getThursdayPills();
+        } else if (day == 5) {
+            pills = analysesSorted.get(0).getFridayPills();
+        } else if (day == 6) {
+            pills = analysesSorted.get(0).getSaturdayPills();
+        } else {
+            pills = analysesSorted.get(0).getSundayPills();
+        }
 
         model.addAttribute("user", user);
         model.addAttribute("numbers", numbers);
         model.addAttribute("analyses", analysesSorted);
-        model.addAttribute("latestInr", analysesSorted.get(0).getInr());
+        model.addAttribute("pills", pills);
         model.addAttribute("today", formatter.format(date));
 
         return "home";
